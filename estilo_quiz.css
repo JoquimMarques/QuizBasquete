@@ -1,0 +1,160 @@
+body{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: sans-serif;
+    background-image: url(imagens/Basquete_12.jpeg);
+    overflow: hidden;
+  
+}
+.icon{
+    width: 8%;
+    background: rgb(255, 102, 0);
+    border-radius: 150px;
+}
+
+img{
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 5px 2px 20px rgb(0, 0, 0) ;
+}
+h2{
+    font-size: 20px;
+    margin-top: -7px;
+}
+
+
+.hidden {
+    display: none;
+   
+}
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+ h1,a{
+     background:linear-gradient( rgb(187, 63, 1) 50%, rgb(0, 0, 16));
+     background-size: cover;
+     background-clip: text;
+     color: transparent;
+     margin-bottom: -40px;
+     margin-top: 30px;
+     text-align: center;
+     text-transform: uppercase;
+     font-size: 35px;
+}
+.section_1,.section_2,.section_3{
+    border: 2px solid white;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 20px 10px 20px;
+    margin: 50px 30px;
+    text-align: center;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(5px);
+    
+}
+.primeira_part_1, .primeira_part_2,.primeira_part_3{
+    background:rgb(175, 76, 1);
+    border-radius: 10px;
+    margin-bottom: -20px;
+    padding: 20px;
+}
+
+.perguntas_1,.perguntas_2,.perguntas_3{
+    padding:20px 60px;
+    border-radius: 10px;;
+    background:rgb(175, 76, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    
+   
+}
+.botao_p, .botao_p2, .botao_p3{
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: rgb(255, 255, 255);
+    transition: 0.8s;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    
+}
+.botao_p:hover{
+    background: rgb(8, 78, 254);
+    color: white;
+    
+    
+}
+.botao_p2:hover{
+    background: rgb(8, 78, 254);
+    color: white;
+    
+    
+}
+.botao_p3:hover{
+    background: rgb(8, 78, 254);
+    color: white;
+    
+    
+}
+.seccao_r{
+
+     background: white;
+     text-align: center;
+     color: black;
+     padding: 20px;
+     margin: 180px 50px;
+     border-radius: 10px;
+    
+
+}
+#avalia{
+    font-size: 27px;
+    background:rgb(134, 58, 0);
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+   
+    
+}
+@media (min-width: 600px) {
+    body{
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-family: sans-serif;
+        background-image: url(imagens/Basquete_14.webp);
+       
+        overflow: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    body{
+        background-color: rgb(0, 255, 187);
+        width: 50%;
+        justify-content: center;
+    }
+    .section_1, .section_2,.section_3{
+        border: 2px solid white;
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        padding: 20px 10px 20px;
+        margin: 30px 30px;
+        text-align: center;
+        justify-content: center;
+        -webkit-backdrop-filter: blur(5px);
+        
+    }
+  
+}

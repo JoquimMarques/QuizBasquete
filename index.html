@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo_quiz.css">
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-desktop/svgs/solid/basketball.svg">
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.min.css">
+    <title>Quiz Basquete</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><a href="index.html">quiz<object class="icon" type="image/svg+xml" data="fontawesome-free-6.5.2-desktop/svgs/solid/basketball.svg">Your browser does not support SVGs </object>Basquete</a></h1>
+    </div>
+
+    <section class="section_1 fade-in">
+        <div class="primeira_part_1">
+            <h2>1. Quantos jogadores compõem uma equipe de basquete?</h2>
+            <img src="imagens/Basquete_12.jpeg" alt="primeira foto">
+        </div>
+        <div class="perguntas_1" id="veri">
+            <button class="botao_p" id="seleciona_A">4 jogadores</button>
+            <button class="botao_p" id="seleciona_B">6 jogadores</button>
+            <button class="botao_p" id="seleciona_C">5 jogadores</button>
+            <button class="botao_p" id="seleciona_D">3 jogadores</button>
+        </div>
+        <div id="banner_corret" class="hidden" style="background-color: rgb(68, 227, 0); padding: 10px; margin-top: 5px; border-radius: 10px;  margin-bottom: -10px; ">
+            Acertou !!!!
+        </div>
+        <div id="banner_incorret" class="hidden" style="background-color: rgb(190, 0, 0); padding: 10px; margin-top: 5px; border-radius: 10px; margin-bottom: -10px;">
+            Errou !!!!
+        </div>
+    </section>
+
+    <section class="section_2 hidden fade-in">
+        <div class="primeira_part_2">
+            <h2>2. Qual jogador marcou mais pontos em uma única partida na história da NBA?</h2>
+            <img src="imagens/foto-7.jpeg" alt="primeira foto">
+        </div>
+        <div class="perguntas_2" id="veri">
+            <button class="botao_p2" id="seleciona_A2">Michael Jordan</button>
+            <button class="botao_p2" id="seleciona_B2">Kobe Bryant</button>
+            <button class="botao_p2" id="seleciona_C2">Wilt Chamberlain</button>
+            <button class="botao_p2" id="seleciona_D2">Giannis Antetokounmpo</button>
+        </div>
+        <div id="banner_corret2" class="hidden" style="background-color: rgb(68, 227, 0); padding: 10px; margin-top: 5px; border-radius: 10px;margin-bottom: -10px;">
+            Acertou !!!!
+        </div>
+        <div id="banner_incorret2" class="hidden" style="background-color: rgb(190, 0, 0); padding: 10px; margin-top: 5px; border-radius: 10px;margin-bottom: -10px;">
+            Errou !!!!
+        </div>
+    </section>
+
+   
+
+    <section class="section_3 hidden fade-in">
+        <div class="primeira_part_3">
+            <h2>3. Quem é o jogador com mais títulos de MVP na história da NBA?</h2>
+            <img src="imagens/foto-8.webp" alt="terceira foto">
+        </div>
+        <div class="perguntas_3" id="veri">
+            <button class="botao_p3" id="seleciona_A3">Bill Russell</button>
+            <button class="botao_p3" id="seleciona_B3">Michael Jordan</button>
+            <button class="botao_p3" id="seleciona_C3">Kareem Abdul-Jabbar</button>
+            <button class="botao_p3" id="seleciona_D3">LeBron James</button>
+        </div>
+        <div id="banner_corret3" class="hidden" style="background-color: rgb(68, 227, 0); padding: 10px; margin-top:5px; border-radius: 10px; margin-bottom: -10px;">
+            Acertou !!!!
+        </div>
+        <div id="banner_incorret3" class="hidden" style="background-color: rgb(190, 0, 0); padding: 10px; margin-top:5px; border-radius: 10px; margin-bottom: -10px;">
+            Errou !!!!
+        </div>
+    </section>
+
+    <section class="seccao_r hidden fade-in">
+        <div class="resultado">
+            <h2>Relatório Final</h2>
+            <p id="resultado"></p>
+            <p id="avalia"><i class="fa-solid fa-face-smile"></i></p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let acertos = 0;
+            let erros = 0;
+
+            const buttons1 = document.querySelectorAll('.botao_p');
+            const correctAnswer1 = 'seleciona_C';
+            const bannerCorret1 = document.getElementById('banner_corret');
+            const bannerIncorret1 = document.getElementById('banner_incorret');
+            const section1 = document.querySelector('.section_1');
+            const section2 = document.querySelector('.section_2');
+            const section3 = document.querySelector('.section_3');
+
+            buttons1.forEach(button => {
+                button.addEventListener('click', () => {
+                    setTimeout(() => {
+                        buttons1.forEach(btn => {
+                            if (btn.id === correctAnswer1) {
+                                btn.style.backgroundColor = 'green';
+                            } else {
+                                btn.style.backgroundColor = 'blue';
+                            }
+                        });
+
+                        if (button.id === correctAnswer1) {
+                            bannerCorret1.classList.remove('hidden');
+                            acertos++;
+                            setTimeout(() => {
+                                bannerCorret1.classList.add('hidden');
+                                section1.style.display = 'none';
+                                section2.classList.remove('hidden');
+                            }, 1000);
+                        } else {
+                            bannerIncorret1.classList.remove('hidden');
+                            erros++;
+                            setTimeout(() => {
+                                bannerIncorret1.classList.add('hidden');
+                                section1.style.display = 'none';
+                                section2.classList.remove('hidden');
+                            }, 1000);
+                        }
+                    }, 1000);
+                });
+            });
+
+            const buttons2 = document.querySelectorAll('.botao_p2');
+            const correctAnswer2 = 'seleciona_C2';
+            const bannerCorret2 = document.getElementById('banner_corret2');
+            const bannerIncorret2 = document.getElementById('banner_incorret2');
+
+            buttons2.forEach(button => {
+                button.addEventListener('click', () => {
+                    setTimeout(() => {
+                        buttons2.forEach(btn => {
+                            if (btn.id === correctAnswer2) {
+                                btn.style.backgroundColor = 'green';
+                            } else {
+                                btn.style.backgroundColor = 'blue';
+                            }
+                        });
+
+                        if (button.id === correctAnswer2) {
+                            bannerCorret2.classList.remove('hidden');
+                            acertos++;
+                            setTimeout(() => {
+                                bannerCorret2.classList.add('hidden');
+                                section2.style.display = 'none';
+                                section3.classList.remove('hidden');
+                            }, 1000);
+                        } else {
+                            bannerIncorret2.classList.remove('hidden');
+                            erros++;
+                            setTimeout(() => {
+                                bannerIncorret2.classList.add('hidden');
+                                section2.style.display = 'none';
+                                section3.classList.remove('hidden');
+                            }, 1000);
+                        }
+                    }, 1000);
+                });
+            });
+
+            const buttons3 = document.querySelectorAll('.botao_p3');
+            const correctAnswer3 = 'seleciona_A3';
+            const bannerCorret3 = document.getElementById('banner_corret3');
+            const bannerIncorret3 = document.getElementById('banner_incorret3');
+            const seccao_r = document.querySelector('.seccao_r');
+            const resultado = document.getElementById('resultado');
+            const aval = document.getElementById('avalia'); 
+
+         buttons3.forEach(button => {
+         button.addEventListener('click', () => {
+            setTimeout(() => {
+            buttons3.forEach(btn => {
+                if (btn.id === correctAnswer3) {
+                    btn.style.backgroundColor = 'green';
+                } else {
+                    btn.style.backgroundColor = 'blue';
+                }
+            });
+
+            if (button.id === correctAnswer3) {
+                bannerCorret3.classList.remove('hidden');
+                acertos++;
+                setTimeout(() => {
+                    bannerCorret3.classList.add('hidden');
+                    section3.style.display = 'none';
+                    seccao_r.classList.remove('hidden');
+                    resultado.textContent = `ACERTOU: ${acertos} ERROU: ${erros}`;
+
+                    if (acertos === 3 || acertos === 2){
+                        aval.innerHTML ='VENCEU <i class="fa-solid fa-face-smile"></i>';
+                    
+                    } else {
+                        aval.innerHTML ='PERDEU <i class="fa-solid fa-face-frown"></i> ';
+                    }
+                }, 1000);
+            } else {
+                bannerIncorret3.classList.remove('hidden');
+                erros++;
+                setTimeout(() => {
+                    bannerIncorret3.classList.add('hidden');
+                    section3.style.display = 'none';
+                    seccao_r.classList.remove('hidden');
+                    resultado.textContent = `ACERTOU: ${acertos} ERROU: ${erros}`;
+
+                    if (acertos === 3 || acertos == 2){
+                        aval.innerHTML ='VENCEU <i class="fa-solid fa-face-smile"></i>';
+                    
+                    } else {
+                        aval.innerHTML ='PERDEU <i class="fa-solid fa-face-frown"></i>';
+                    }
+
+                  
+                }, 1000);
+            }
+        }, 1000);
+    });
+});
+
+});
+    </script>
+</body>
+</html>
